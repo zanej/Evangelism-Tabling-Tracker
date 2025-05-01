@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>THRIVE - Evangelism Tracker</title>
+    <link rel="icon" href="https://i.ibb.co/CKc29PV8/Borderless-Logo-1.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fdfdfd;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #500000;
+            text-align: center;
+        }
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        a {
+            color: #500000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f3e6e6;
+            color: #500000;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #500000;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <img src="https://i.ibb.co/CKc29PV8/Borderless-Logo-1.png" alt="THRIVE Logo" style="max-height: 300px; margin-bottom: 10px;">
+    <h1>THRIVE South Asian InterVarsity</h1>
+    <h2>Evangelism Conversation Log</h2>
+    <a class="btn" href="/add">+ Add New Conversation</a>
+    </header>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Contact Info</th>
+            <th>Topic</th>
+            <th>Prayer Request</th>
+            <th>Follow-Up</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log[6] }}</td>
+            <td>{{ log[1] }}</td>
+            <td>{{ log[2] }}</td>
+            <td>{{ log[3] }}</td>
+            <td>{{ log[4] }}</td>
+            <td>{{ "Yes" if log[5] else "No" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+<footer style="text-align:center; margin-top: 40px; font-style: italic; color: #500000;">
+    Romans 10:14 — “How can they hear without someone preaching to them?”
+</footer>
+
+</body>
+</html>
